@@ -12,6 +12,15 @@ import SwiftyJSON
 
 class PostsVC: UIViewController {
     
+    @IBOutlet weak var hedarView: UIView!{
+        didSet{
+           // hedarView.layer.shadowColor = UIColor.systemGray.cgColor
+           // hedarView.layer.shadowOpacity = 0.3
+          //  hedarView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            hedarView.layer.shadowRadius = 5
+            hedarView.layer.cornerRadius = 20
+        }
+    }
     @IBOutlet weak var postTableView: UITableView!
     
     var posts: [Post] = []
