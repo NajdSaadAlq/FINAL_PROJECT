@@ -67,7 +67,7 @@ extension PostsVC: UITableViewDelegate,UITableViewDataSource{
         as! PostCell
         
         let post = posts[indexPath.row]
-        cell.postTextLabel.text = "  " + post.text
+        cell.postTextLabel.text = "   " + post.text
         //the logic of filling the image from the URL
         let imageStringUrl = post.image
         if let url = URL(string: imageStringUrl){

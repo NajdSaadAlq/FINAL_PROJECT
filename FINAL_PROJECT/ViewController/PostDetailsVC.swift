@@ -19,7 +19,11 @@ class PostDetailsVC: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var postTextLabel: UILabel!
-    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postImageView: UIImageView!{
+        didSet{
+            postImageView.layer.cornerRadius = 15
+        }
+    }
     @IBOutlet weak var numberOfLikesLabel: UILabel!
     @IBOutlet weak var backView: UIView!{
         didSet{
@@ -110,7 +114,7 @@ extension PostDetailsVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
         
-        cell.commentMessgeLabel.text = comments[indexPath.row].message
+        cell.commentMessgeLabel.text = "   \(comments[indexPath.row].message)"
         cell.userNameLabel.text = comments[indexPath.row].owner.firstName + " " + comments[indexPath.row].owner.lastName
         // image user from the URL
         let imageStringUser = comments[indexPath.row].owner.picture
