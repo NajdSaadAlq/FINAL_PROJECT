@@ -48,7 +48,7 @@ class PostsVC: UIViewController {
             catch let error {
                 print(error)
             }
-      //      print(data)
+           print(data)
             
         }
         
@@ -87,12 +87,22 @@ extension PostsVC: UITableViewDelegate,UITableViewDataSource{
                 cell.userImageView.image = UIImage(data: imageDate)
             }}
         
+        cell.likesNumberLabel.text = String(post.likes)
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 500
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectdPost = posts[indexPath.row]
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PostDetailsVC") as! PostDetailsVC
+        vc.post = selectdPost
+        present(vc, animated: true, completion: nil)
     }
     
     

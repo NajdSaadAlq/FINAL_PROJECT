@@ -1,5 +1,5 @@
 //
-//  PostCell.swift
+//  CommentCell.swift
 //  FINAL_PROJECT
 //
 //  Created by Najd Alquarishi on 25/12/2021.
@@ -7,14 +7,8 @@
 
 import UIKit
 
-class PostCell: UITableViewCell {
+class CommentCell: UITableViewCell {
 
-    @IBOutlet weak var tagBackgroundSV: UIStackView!{
-        didSet{
-            tagBackgroundSV.layer.cornerRadius = 15
-        }
-    }
-    @IBOutlet weak var likesNumberLabel: UILabel!
     @IBOutlet weak var backView: UIView!{
         didSet{
             backView.layer.shadowColor = UIColor.black.cgColor
@@ -22,16 +16,10 @@ class PostCell: UITableViewCell {
             backView.layer.shadowOffset = CGSize(width: 0, height: 2)
             backView.layer.shadowRadius = 5
             backView.layer.cornerRadius = 15
-        }
-    }
-    @IBOutlet weak var userImageView: UIImageView!
+        }}
+    @IBOutlet weak var commentMessgeLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var postImageView: UIImageView!{
-        didSet{
-            postImageView.layer.cornerRadius = 15
-        }
-    }
-    @IBOutlet weak var postTextLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
