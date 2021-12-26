@@ -23,6 +23,8 @@
 		A89A0F312778042C00656018 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = A89A0F302778042C00656018 /* NVActivityIndicatorViewExtended */; };
 		A89A0F332778122A00656018 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F322778122A00656018 /* ShadowView.swift */; };
 		A89A0F352778145F00656018 /* CurvatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F342778145F00656018 /* CurvatImageView.swift */; };
+		A89A0F3727783D5900656018 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F3627783D5900656018 /* ProfileVC.swift */; };
+		A89A0F39277852C000656018 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F38277852C000656018 /* Location.swift */; };
 		A8C5566C2772255000122150 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566B2772255000122150 /* Post.swift */; };
 		A8C5566E2776A61300122150 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566D2776A61200122150 /* PostCell.swift */; };
 		A8C556702776C58200122150 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566F2776C58200122150 /* User.swift */; };
@@ -43,6 +45,8 @@
 		A89A0F2B2777F64700656018 /* UImage+StringUrlToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+StringUrlToImage.swift"; sourceTree = "<group>"; };
 		A89A0F322778122A00656018 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		A89A0F342778145F00656018 /* CurvatImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvatImageView.swift; sourceTree = "<group>"; };
+		A89A0F3627783D5900656018 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		A89A0F38277852C000656018 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A8C5566B2772255000122150 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A8C5566D2776A61200122150 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		A8C5566F2776C58200122150 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				A83047352770A1B5003BCF52 /* PostsVC.swift */,
 				A89A0F222777705200656018 /* PostDetailsVC.swift */,
+				A89A0F3627783D5900656018 /* ProfileVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				A8C5566B2772255000122150 /* Post.swift */,
 				A8C5566F2776C58200122150 /* User.swift */,
 				A89A0F242777B3B100656018 /* Comment.swift */,
+				A89A0F38277852C000656018 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,8 +236,10 @@
 				A8C556702776C58200122150 /* User.swift in Sources */,
 				A89A0F252777B3B100656018 /* Comment.swift in Sources */,
 				A83047342770A1B5003BCF52 /* SceneDelegate.swift in Sources */,
+				A89A0F39277852C000656018 /* Location.swift in Sources */,
 				A89A0F292777B6DC00656018 /* CommentCell.swift in Sources */,
 				A89A0F352778145F00656018 /* CurvatImageView.swift in Sources */,
+				A89A0F3727783D5900656018 /* ProfileVC.swift in Sources */,
 				A8C5566C2772255000122150 /* Post.swift in Sources */,
 				A89A0F2C2777F64700656018 /* UImage+StringUrlToImage.swift in Sources */,
 				A8C5566E2776A61300122150 /* PostCell.swift in Sources */,

@@ -13,4 +13,8 @@ struct User : Decodable{
     var firstName: String
     var lastName: String
     var picture: String
+    var gender: String?
+    var email: String?
+    var phone: String?
+    var location: Location?
 }
