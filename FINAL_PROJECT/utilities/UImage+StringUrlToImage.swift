@@ -14,5 +14,9 @@ extension UIImageView {
             if let imageDate = try? Data(contentsOf: url){
                 self.image = UIImage(data: imageDate)
             }}
+          }
+    
+    func makeCircularImage(){
+        self.layer.cornerRadius = self.frame.width/2
     }
 }

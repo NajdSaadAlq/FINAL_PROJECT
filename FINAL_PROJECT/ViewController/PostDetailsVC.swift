@@ -49,7 +49,7 @@ class PostDetailsVC: UIViewController {
         // image user from the URL
         let imageStringUser = post.owner.picture
         userImageView.setImageFromStringUrl(stringUrl: imageStringUser)
-        userImageView.layer.cornerRadius = userImageView.frame.width/2
+        userImageView.makeCircularImage()
         //likes
         numberOfLikesLabel.text = String(post.likes)
 
@@ -95,7 +95,7 @@ extension PostDetailsVC: UITableViewDelegate,UITableViewDataSource{
         // image user from the URL
         let imageStringUser = comments[indexPath.row].owner.picture
         cell.userImageView.setImageFromStringUrl(stringUrl: imageStringUser)
-        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.width/2
+        cell.userImageView.makeCircularImage()
 
         return cell
     }

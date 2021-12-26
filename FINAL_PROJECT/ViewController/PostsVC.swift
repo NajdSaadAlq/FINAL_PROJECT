@@ -76,7 +76,7 @@ extension PostsVC: UITableViewDelegate,UITableViewDataSource{
         // image user from the URL
         let imageStringUser = post.owner.picture
         cell.userImageView.setImageFromStringUrl(stringUrl: imageStringUser)
-        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.width/2
+        cell.userImageView.makeCircularImage()
         //likes
         cell.likesNumberLabel.text = String(post.likes)
         
