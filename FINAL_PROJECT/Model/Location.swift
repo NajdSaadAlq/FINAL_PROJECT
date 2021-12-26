@@ -8,6 +8,7 @@
 import Foundation
 
 struct Location: Decodable{
+    
     var city: String?
     var country: String?
 }

@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 import NVActivityIndicatorView
 
 //MARK: START class
@@ -24,7 +22,6 @@ class PostDetailsVC: UIViewController {
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var numberOfLikesLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
-
     
     //MARK: START viewDidLoad
     override func viewDidLoad() {
@@ -46,36 +43,21 @@ class PostDetailsVC: UIViewController {
         userImageView.makeCircularImage()
         //likes
         numberOfLikesLabel.text = String(post.likes)
-
-        // getting the comments of the post the API
-        //let URL = "https://dummyapi.io/data/v1/post/60d21b8667d0d8992e610d3f/comment"
-        let URL = "https://dummyapi.io/data/v1/post/\(post.id)/comment"
-        let appId = "61c0648055ad2a19a460d240"
-        let headers : HTTPHeaders = [
-            "app-id" : appId]
+        
         
         loaderView.startAnimating()
-        //MARK: START requst data
-        // i changed it from responsrJSON To responseData because in Alamofire 6.0 they will delete responsrJSON
-        AF.request(URL, headers: headers).responseData { response in
-            let jsonData = JSON(response.value)
-            let data = jsonData["data"]
-            let decoder = JSONDecoder()
-            do{self.comments = try decoder.decode([Comment].self, from: data.rawData())
-                    self.commentTableView.reloadData()
-            }
-            catch let error {
-                print(error)
-            }
+        //MARK: START requst Data
+        PostAPI.getPostComments(id: post.id) { commentsResponse in
+            self.comments = commentsResponse
+            self.commentTableView.reloadData()
             self.loaderView.stopAnimating()
-     }//MARK: END requst data
+        }//MARK: END requst Data
     }//MARK: END viewDidLoad
     
     //MARK: ACTIONS
     @IBAction func closeBtnClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
  }//MARK: END class
 
   //MARK: START extension
@@ -84,8 +66,8 @@ extension PostDetailsVC: UITableViewDelegate,UITableViewDataSource{
         return comments.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
         cell.commentMessgeLabel.text = "   \(comments[indexPath.row].message)"
         cell.userNameLabel.text = comments[indexPath.row].owner.firstName + " " + comments[indexPath.row].owner.lastName
         // image user from the URL

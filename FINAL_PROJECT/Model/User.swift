@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct User : Decodable{
+    
     var id: String
     var firstName: String
     var lastName: String

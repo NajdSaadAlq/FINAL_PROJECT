@@ -6,26 +6,21 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftUI
-import SwiftyJSON
 import NVActivityIndicatorView
 
 //MARK: START CLASS
 class PostsVC: UIViewController {
+    
+    var posts: [Post] = []
     
 //MARK: OUTLETS
     @IBOutlet weak var loaderView: NVActivityIndicatorView!
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var hedarView: UIView!{
     didSet{hedarView.layer.shadowRadius = 5
-            hedarView.layer.cornerRadius = 20
-        }
-    }
+            hedarView.layer.cornerRadius = 20}}
     
-    var posts: [Post] = []
-    
-//MARK: START viewDidLoad
+    //MARK: START viewDidLoad
     override func viewDidLoad(){
         
         postTableView.delegate = self
@@ -34,32 +29,17 @@ class PostsVC: UIViewController {
         // subscribing to the notfication
         NotificationCenter.default.addObserver(self, selector: #selector(userProfileTapped), name: NSNotification.Name(rawValue: "userStackViewTapped"), object: nil)
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let appId = "61c0648055ad2a19a460d240"
-        let URL = "https://dummyapi.io/data/v1/post"
-        let headers : HTTPHeaders = [
-            "app-id" : appId ]
         
         loaderView.startAnimating()
-        //MARK: START requst Data
-        // i changed it from responsrJSON To responseData because in Alamofire 6.0 they will delete responsrJSON
-        AF.request(URL, headers: headers).responseData { response in
-            let jsonData = JSON(response.value)
-            let data = jsonData["data"]
-            let decoder = JSONDecoder()
-            do{self.posts = try decoder.decode([Post].self, from: data.rawData())
-                    self.postTableView.reloadData()
-            }
-            catch let error{
-                print(error)
-            }
+        //MARK: START requst data
+        PostAPI.getAllPosts { postsResponse in
+            self.posts = postsResponse
+            self.postTableView.reloadData()
             self.loaderView.stopAnimating()
-            }//MARK: END requst Data
-        
+        }//MARK: END requst data
  }//MARK: END viewDidLoad
     
     //MARK: ACTIONS
-    
     @objc func userProfileTapped(notification:Notification){
         if let cell = notification.userInfo?["cell"] as? UITableViewCell{
             if  let indxPath = postTableView.indexPath(for: cell){

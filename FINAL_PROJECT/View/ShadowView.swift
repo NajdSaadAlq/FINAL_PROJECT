@@ -13,7 +13,6 @@ class ShadowView: UIView {
         super.init(frame: frame)
         setupShadow()
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupShadow()
