@@ -19,6 +19,10 @@
 		A89A0F252777B3B100656018 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F242777B3B100656018 /* Comment.swift */; };
 		A89A0F292777B6DC00656018 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F282777B6DC00656018 /* CommentCell.swift */; };
 		A89A0F2C2777F64700656018 /* UImage+StringUrlToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F2B2777F64700656018 /* UImage+StringUrlToImage.swift */; };
+		A89A0F2F2778042C00656018 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = A89A0F2E2778042C00656018 /* NVActivityIndicatorView */; };
+		A89A0F312778042C00656018 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = A89A0F302778042C00656018 /* NVActivityIndicatorViewExtended */; };
+		A89A0F332778122A00656018 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F322778122A00656018 /* ShadowView.swift */; };
+		A89A0F352778145F00656018 /* CurvatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F342778145F00656018 /* CurvatImageView.swift */; };
 		A8C5566C2772255000122150 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566B2772255000122150 /* Post.swift */; };
 		A8C5566E2776A61300122150 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566D2776A61200122150 /* PostCell.swift */; };
 		A8C556702776C58200122150 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566F2776C58200122150 /* User.swift */; };
@@ -37,6 +41,8 @@
 		A89A0F242777B3B100656018 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A89A0F282777B6DC00656018 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		A89A0F2B2777F64700656018 /* UImage+StringUrlToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+StringUrlToImage.swift"; sourceTree = "<group>"; };
+		A89A0F322778122A00656018 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		A89A0F342778145F00656018 /* CurvatImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvatImageView.swift; sourceTree = "<group>"; };
 		A8C5566B2772255000122150 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A8C5566D2776A61200122150 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		A8C5566F2776C58200122150 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -48,7 +54,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A830474A2770A33D003BCF52 /* SwiftyJSON in Frameworks */,
+				A89A0F312778042C00656018 /* NVActivityIndicatorViewExtended in Frameworks */,
 				A83047472770A260003BCF52 /* Alamofire in Frameworks */,
+				A89A0F2F2778042C00656018 /* NVActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +117,8 @@
 				A830473C2770A1B6003BCF52 /* LaunchScreen.storyboard */,
 				A8C5566D2776A61200122150 /* PostCell.swift */,
 				A89A0F282777B6DC00656018 /* CommentCell.swift */,
+				A89A0F322778122A00656018 /* ShadowView.swift */,
+				A89A0F342778145F00656018 /* CurvatImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 			packageProductDependencies = (
 				A83047462770A260003BCF52 /* Alamofire */,
 				A83047492770A33D003BCF52 /* SwiftyJSON */,
+				A89A0F2E2778042C00656018 /* NVActivityIndicatorView */,
+				A89A0F302778042C00656018 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = FINAL_PROJECT;
 			productReference = A830472E2770A1B5003BCF52 /* FINAL_PROJECT.app */;
@@ -183,6 +195,7 @@
 			packageReferences = (
 				A83047452770A260003BCF52 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A83047482770A33D003BCF52 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				A89A0F2D2778042B00656018 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = A830472F2770A1B5003BCF52 /* Products */;
 			projectDirPath = "";
@@ -212,11 +225,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A83047362770A1B5003BCF52 /* PostsVC.swift in Sources */,
+				A89A0F332778122A00656018 /* ShadowView.swift in Sources */,
 				A83047322770A1B5003BCF52 /* AppDelegate.swift in Sources */,
 				A8C556702776C58200122150 /* User.swift in Sources */,
 				A89A0F252777B3B100656018 /* Comment.swift in Sources */,
 				A83047342770A1B5003BCF52 /* SceneDelegate.swift in Sources */,
 				A89A0F292777B6DC00656018 /* CommentCell.swift in Sources */,
+				A89A0F352778145F00656018 /* CurvatImageView.swift in Sources */,
 				A8C5566C2772255000122150 /* Post.swift in Sources */,
 				A89A0F2C2777F64700656018 /* UImage+StringUrlToImage.swift in Sources */,
 				A8C5566E2776A61300122150 /* PostCell.swift in Sources */,
@@ -458,6 +473,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A89A0F2D2778042B00656018 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -470,6 +493,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A83047482770A33D003BCF52 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		A89A0F2E2778042C00656018 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A89A0F2D2778042B00656018 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		A89A0F302778042C00656018 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A89A0F2D2778042B00656018 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

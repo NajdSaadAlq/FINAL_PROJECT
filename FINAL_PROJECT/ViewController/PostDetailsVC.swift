@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 //MARK: START class
 class PostDetailsVC: UIViewController {
@@ -16,21 +17,14 @@ class PostDetailsVC: UIViewController {
     var comments: [Comment] = []
     
     //MARK: OUTLETS
+    @IBOutlet weak var loaderView: NVActivityIndicatorView!
     @IBOutlet weak var commentTableView: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var numberOfLikesLabel: UILabel!
-    @IBOutlet weak var postImageView: UIImageView!{
-    didSet{postImageView.layer.cornerRadius = 15
-    }}
-    @IBOutlet weak var backView: UIView!{
-    didSet{backView.layer.shadowColor = UIColor.black.cgColor
-            backView.layer.shadowOpacity = 0.3
-            backView.layer.shadowOffset = CGSize(width: 0, height: 2)
-            backView.layer.shadowRadius = 5
-            backView.layer.cornerRadius = 15
-    }}
+    @IBOutlet weak var postImageView: UIImageView!
+
     
     //MARK: START viewDidLoad
     override func viewDidLoad() {
@@ -60,6 +54,7 @@ class PostDetailsVC: UIViewController {
         let headers : HTTPHeaders = [
             "app-id" : appId]
         
+        loaderView.startAnimating()
         //MARK: START requst data
         // i changed it from responsrJSON To responseData because in Alamofire 6.0 they will delete responsrJSON
         AF.request(URL, headers: headers).responseData { response in
@@ -72,6 +67,7 @@ class PostDetailsVC: UIViewController {
             catch let error {
                 print(error)
             }
+            self.loaderView.stopAnimating()
      }//MARK: END requst data
     }//MARK: END viewDidLoad
     

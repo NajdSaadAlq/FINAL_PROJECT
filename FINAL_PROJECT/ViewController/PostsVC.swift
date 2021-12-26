@@ -9,11 +9,13 @@ import UIKit
 import Alamofire
 import SwiftUI
 import SwiftyJSON
+import NVActivityIndicatorView
 
 //MARK: START CLASS
 class PostsVC: UIViewController {
     
 //MARK: OUTLETS
+    @IBOutlet weak var loaderView: NVActivityIndicatorView!
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var hedarView: UIView!{
     didSet{hedarView.layer.shadowRadius = 5
@@ -30,12 +32,12 @@ class PostsVC: UIViewController {
         postTableView.dataSource = self
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         let appId = "61c0648055ad2a19a460d240"
         let URL = "https://dummyapi.io/data/v1/post"
         let headers : HTTPHeaders = [
             "app-id" : appId ]
         
+        loaderView.startAnimating()
         //MARK: START requst Data
         // i changed it from responsrJSON To responseData because in Alamofire 6.0 they will delete responsrJSON
         AF.request(URL, headers: headers).responseData { response in
@@ -48,7 +50,7 @@ class PostsVC: UIViewController {
             catch let error{
                 print(error)
             }
-           print(data)
+            self.loaderView.stopAnimating()
             }//MARK: END requst Data
         
  }//MARK: END viewDidLoad
