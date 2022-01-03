@@ -25,4 +25,37 @@ class UserAPI: API{
                 print(error)}
             }
     }//MARK: END getUserData
+    
+    static func SingUpNewUser( completionHander: @escaping (User) -> ()){
+        
+        let URL = "\(beseURL)/user/create"
+        let parame = [
+            "firstName": "Najd",
+            "lastName": "alqurish",
+            "email": "njbknb@hgmail.com"
+        ]
+        
+        AF.request(URL,method: .post ,parameters: parame,encoder: JSONParameterEncoder.default,headers: headers).validate().responseData { response in
+            switch response.result {
+                    case .success:
+                let jsonData = JSON(response.value)
+                print(jsonData)
+                let decoder = JSONDecoder()
+                do{
+                    let user = try decoder.decode(User.self, from: jsonData.rawData())
+                    completionHander(user)
+                }
+                catch let error{
+                    print(error)
+                    
+                }
+                case .failure(let error):
+                let jsonData = JSON(response.data)
+                let data = jsonData["data"]
+                let emailError = data["email"].stringValue
+                print(emailError)
+                    }
+            
+    }//MARK: END SingUpNewUser
+}
 }

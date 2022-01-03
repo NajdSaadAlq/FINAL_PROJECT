@@ -44,7 +44,7 @@ class PostDetailsVC: UIViewController {
         //likes
         numberOfLikesLabel.text = String(post.likes)
         
-        
+
         loaderView.startAnimating()
         //MARK: START requst Data
         PostAPI.getPostComments(id: post.id) { commentsResponse in

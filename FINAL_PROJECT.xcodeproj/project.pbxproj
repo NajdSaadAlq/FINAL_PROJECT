@@ -28,6 +28,8 @@
 		A89A0F3C27785A3D00656018 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F3B27785A3D00656018 /* PostAPI.swift */; };
 		A89A0F3E2778660300656018 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F3D2778660300656018 /* UserAPI.swift */; };
 		A89A0F40277868E600656018 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F3F277868E600656018 /* API.swift */; };
+		A89A0F422778761500656018 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F412778761500656018 /* CircularView.swift */; };
+		A89A0F442778880B00656018 /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89A0F432778880A00656018 /* SingUpVC.swift */; };
 		A8C5566C2772255000122150 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566B2772255000122150 /* Post.swift */; };
 		A8C5566E2776A61300122150 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566D2776A61200122150 /* PostCell.swift */; };
 		A8C556702776C58200122150 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5566F2776C58200122150 /* User.swift */; };
@@ -53,6 +55,8 @@
 		A89A0F3B27785A3D00656018 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		A89A0F3D2778660300656018 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		A89A0F3F277868E600656018 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A89A0F412778761500656018 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
+		A89A0F432778880A00656018 /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
 		A8C5566B2772255000122150 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A8C5566D2776A61200122150 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		A8C5566F2776C58200122150 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				A83047352770A1B5003BCF52 /* PostsVC.swift */,
 				A89A0F222777705200656018 /* PostDetailsVC.swift */,
 				A89A0F3627783D5900656018 /* ProfileVC.swift */,
+				A89A0F432778880A00656018 /* SingUpVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				A8C5566D2776A61200122150 /* PostCell.swift */,
 				A89A0F282777B6DC00656018 /* CommentCell.swift */,
 				A89A0F322778122A00656018 /* ShadowView.swift */,
+				A89A0F412778761500656018 /* CircularView.swift */,
 				A89A0F342778145F00656018 /* CurvatImageView.swift */,
 			);
 			path = View;
@@ -247,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A89A0F442778880B00656018 /* SingUpVC.swift in Sources */,
 				A83047362770A1B5003BCF52 /* PostsVC.swift in Sources */,
 				A89A0F3E2778660300656018 /* UserAPI.swift in Sources */,
 				A89A0F332778122A00656018 /* ShadowView.swift in Sources */,
@@ -256,6 +263,7 @@
 				A83047342770A1B5003BCF52 /* SceneDelegate.swift in Sources */,
 				A89A0F39277852C000656018 /* Location.swift in Sources */,
 				A89A0F292777B6DC00656018 /* CommentCell.swift in Sources */,
+				A89A0F422778761500656018 /* CircularView.swift in Sources */,
 				A89A0F352778145F00656018 /* CurvatImageView.swift in Sources */,
 				A89A0F3727783D5900656018 /* ProfileVC.swift in Sources */,
 				A8C5566C2772255000122150 /* Post.swift in Sources */,
