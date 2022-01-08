@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zzg-pk-TCI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -250,7 +251,7 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="LcZ-4c-O3o" userLabel="UesarSV">
                                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="50"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="k0u-Lj-3kl">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="k0u-Lj-3kl" customClass="CurvatImageView" customModule="FINAL_PROJECT" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="1.5" width="50" height="47"/>
                                                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
@@ -386,37 +387,47 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmB-1u-mfz" userLabel="HedarView">
                                 <rect key="frame" x="20" y="57" width="374" height="131"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Najd Saad Alqurish" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-Q0-IuP">
-                                        <rect key="frame" x="39" y="22" width="188.5" height="27.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@NjoOodE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2N2-Fb-ZhN">
-                                        <rect key="frame" x="92" y="66" width="83" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar 04-1" translatesAutoresizingMaskIntoConstraints="NO" id="yJs-uZ-m50" userLabel="uesrImage">
-                                        <rect key="frame" x="252" y="22" width="92" height="86"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="86" id="RM6-Gm-0Ga"/>
-                                            <constraint firstAttribute="width" constant="92" id="of8-UA-Iaw"/>
-                                        </constraints>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Epz-Z0-3B3">
+                                        <rect key="frame" x="3" y="0.0" width="370.5" height="187"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uub-eC-RJb">
+                                                <rect key="frame" x="0.0" y="65.5" width="270.5" height="56"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Najd Saad Alqurish" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-Q0-IuP">
+                                                        <rect key="frame" x="41" y="0.0" width="188.5" height="27.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@NjoOodE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2N2-Fb-ZhN">
+                                                        <rect key="frame" x="94" y="35.5" width="83" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar 04-1" translatesAutoresizingMaskIntoConstraints="NO" id="yJs-uZ-m50" userLabel="uesrImage" customClass="CurvatImageView" customModule="FINAL_PROJECT" customModuleProvider="target">
+                                                <rect key="frame" x="278.5" y="0.0" width="92" height="187"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="92" id="of8-UA-Iaw"/>
+                                                </constraints>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="yJs-uZ-m50" firstAttribute="top" secondItem="lmB-1u-mfz" secondAttribute="top" constant="22" id="1dV-IJ-OuB"/>
-                                    <constraint firstItem="uHf-Q0-IuP" firstAttribute="top" secondItem="lmB-1u-mfz" secondAttribute="top" constant="22" id="3Kl-Kp-lct"/>
-                                    <constraint firstAttribute="trailing" secondItem="yJs-uZ-m50" secondAttribute="trailing" constant="30" id="3kz-2M-tDG"/>
-                                    <constraint firstItem="uHf-Q0-IuP" firstAttribute="leading" secondItem="lmB-1u-mfz" secondAttribute="leading" constant="39" id="A3Y-FW-172"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uHf-Q0-IuP" secondAttribute="trailing" constant="20" symbolic="YES" id="H0r-Yo-rBF"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2N2-Fb-ZhN" secondAttribute="trailing" constant="20" symbolic="YES" id="Kr4-dY-fna"/>
-                                    <constraint firstItem="2N2-Fb-ZhN" firstAttribute="top" secondItem="uHf-Q0-IuP" secondAttribute="bottom" constant="16.5" id="hhy-wt-dOb"/>
-                                    <constraint firstItem="2N2-Fb-ZhN" firstAttribute="leading" secondItem="lmB-1u-mfz" secondAttribute="leading" constant="92" id="uqS-d7-MtU"/>
+                                    <constraint firstItem="Epz-Z0-3B3" firstAttribute="top" secondItem="lmB-1u-mfz" secondAttribute="topMargin" constant="-8" id="8Wy-s0-Vce"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Epz-Z0-3B3" secondAttribute="bottom" constant="-64" id="HFp-jW-NOp"/>
+                                    <constraint firstItem="Epz-Z0-3B3" firstAttribute="leading" secondItem="lmB-1u-mfz" secondAttribute="leading" constant="3" id="O5z-no-IHN"/>
+                                    <constraint firstItem="Epz-Z0-3B3" firstAttribute="leading" secondItem="lmB-1u-mfz" secondAttribute="leadingMargin" constant="-5" id="Pja-cZ-69N"/>
+                                    <constraint firstAttribute="trailing" secondItem="Epz-Z0-3B3" secondAttribute="trailing" constant="0.5" id="Tae-T8-j5B"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Epz-Z0-3B3" secondAttribute="trailing" constant="-7.5" id="jpI-Hg-wEN"/>
+                                    <constraint firstItem="Epz-Z0-3B3" firstAttribute="height" secondItem="lmB-1u-mfz" secondAttribute="height" multiplier="1.42748" id="mCI-uS-G4q"/>
+                                    <constraint firstItem="Epz-Z0-3B3" firstAttribute="width" secondItem="lmB-1u-mfz" secondAttribute="width" multiplier="0.990642" id="ySM-2T-ErV"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elN-jp-cke" userLabel="loaderView" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
@@ -440,11 +451,11 @@
                             <constraint firstItem="lmB-1u-mfz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bl1-pd-6Eb"/>
                             <constraint firstItem="lmB-1u-mfz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BmD-Om-I4n"/>
                             <constraint firstItem="lmB-1u-mfz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.214286" constant="-61.000256000000007" id="H1Q-Qk-sgX"/>
+                            <constraint firstItem="sAt-iY-pAe" firstAttribute="top" secondItem="lmB-1u-mfz" secondAttribute="bottom" constant="19" id="MP6-sr-1LQ"/>
                             <constraint firstItem="elN-jp-cke" firstAttribute="centerY" secondItem="l0W-Rs-1FZ" secondAttribute="centerY" id="WON-ea-Y0D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l0W-Rs-1FZ" secondAttribute="trailing" constant="16" id="YGZ-fL-DJa"/>
                             <constraint firstItem="lmB-1u-mfz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="57" id="kbE-TC-GQK"/>
                             <constraint firstItem="l0W-Rs-1FZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="p6C-M6-mem"/>
-                            <constraint firstItem="l0W-Rs-1FZ" firstAttribute="top" secondItem="lmB-1u-mfz" secondAttribute="bottom" constant="30" id="wdH-c7-TAk"/>
                             <constraint firstItem="elN-jp-cke" firstAttribute="centerX" secondItem="l0W-Rs-1FZ" secondAttribute="centerX" id="yxc-CF-r7S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l0W-Rs-1FZ" secondAttribute="bottom" constant="-50" id="z2I-iS-nCx"/>
                         </constraints>
@@ -484,7 +495,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="BMF-71-DO3" userLabel="UesarSV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="h8Q-Yr-uLT">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="h8Q-Yr-uLT" customClass="CurvatImageView" customModule="FINAL_PROJECT" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="1.5" width="50" height="47"/>
                                                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -611,7 +622,7 @@
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UXN-oz-oHh" userLabel="userSV">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="183" height="35"/>
                                                                                     <subviews>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar 04" translatesAutoresizingMaskIntoConstraints="NO" id="hYq-Q6-O1h">
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar 04" translatesAutoresizingMaskIntoConstraints="NO" id="hYq-Q6-O1h" customClass="CurvatImageView" customModule="FINAL_PROJECT" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="35" id="Fpq-8Z-DxY"/>
@@ -894,7 +905,7 @@
                                     <constraint firstAttribute="height" constant="200" id="acP-vl-cs6"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar 04-1" translatesAutoresizingMaskIntoConstraints="NO" id="54l-FN-NAy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar 04-1" translatesAutoresizingMaskIntoConstraints="NO" id="54l-FN-NAy" customClass="CurvatImageView" customModule="FINAL_PROJECT" customModuleProvider="target">
                                 <rect key="frame" x="132" y="132" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="XmF-jA-w4S"/>
